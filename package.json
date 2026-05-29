@@ -1,6 +1,6 @@
 {
   "name": "@inclusive-design/inclusive-disclosure",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Web component implementation of the disclosure pattern",
   "main": "src/inclusive-disclosure.js",
   "type": "module",
