@@ -1,8 +1,11 @@
 .husky
 .npmignore
+.release-please-manifest.json
 .zed
 !dist
 src
 commitlint.config.js
 eslint.config.js
+release-please-config.json
+renovate.json
 stylelint.config.js
