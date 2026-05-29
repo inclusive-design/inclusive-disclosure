@@ -1,0 +1,9 @@
+@scope (inclusive-disclosure) {
+    :scope [aria-expanded]+* {
+        display: none;
+    }
+
+    :scope [aria-expanded="true"]+* {
+        display: block;
+    }
+}

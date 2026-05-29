@@ -1,0 +1,8 @@
+.husky
+.npmignore
+.zed
+!dist
+src
+commitlint.config.js
+eslint.config.js
+stylelint.config.js
