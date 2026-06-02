@@ -2,10 +2,17 @@ import { Elena } from '@elenajs/core';
 
 export default class InclusiveDisclosure extends Elena(HTMLElement) {
 	static tagName = 'inclusive-disclosure';
-	static element = 'button[aria-expanded]';
 
 	connectedCallback() {
 		super.connectedCallback();
+		if (this.element.tagName !== 'BUTTON') {
+			/** The first child element must be a button. */
+			console.warn('░█ [ELENA]: Element not found.');
+		}
+
+		this.element.removeAttribute('hidden');
+		this.element.nextElementSibling.setAttribute('hidden', '');
+		this.element.setAttribute('aria-expanded', false);
 		this.element.addEventListener('click', this._onClick);
 	}
 
@@ -18,6 +25,11 @@ export default class InclusiveDisclosure extends Elena(HTMLElement) {
 		event.preventDefault();
 		const ariaExpanded = this.element.getAttribute('aria-expanded') === 'true' || false;
 		this.element.setAttribute('aria-expanded', !ariaExpanded);
+		if (ariaExpanded) {
+			this.element.nextElementSibling.setAttribute('hidden', '');
+		} else {
+			this.element.nextElementSibling.removeAttribute('hidden');
+		}
 	};
 }
 

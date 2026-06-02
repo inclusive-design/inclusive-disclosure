@@ -2,7 +2,11 @@
 .npmignore
 .release-please-manifest.json
 .zed
-!dist
+!dist/*.d.ts
+!dist/*.js
+!dist/*.js.map
+!dist/*.json
+demo.html
 src
 commitlint.config.js
 eslint.config.js
